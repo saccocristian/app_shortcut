@@ -1,9 +1,13 @@
 #include <QApplication>
-#include "FilesListDialog.h"
+#include "MySystemTray.h"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    FilesListDialog dialog;
-    dialog.show();
+
+    // Evita la chiusura dell'app quando si chiude la finestra del dialogo
+    QApplication::setQuitOnLastWindowClosed(false);
+
+    MySystemTray my_system_tray;
+
     return a.exec();
 }
